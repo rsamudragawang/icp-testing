@@ -31,7 +31,7 @@ export default Server(
             res.json({ greeting: `Hello, ${req.query.name}` });
         });
 
-        app.get('/movie', async (req, res) => {
+        app.post('/movie', async (req, res) => {
             ic.setOutgoingHttpOptions({
                 maxResponseBytes: 20_000n,
                 cycles: 500_000_000_000n, // HTTP outcalls cost cycles. Unused cycles are returned.
